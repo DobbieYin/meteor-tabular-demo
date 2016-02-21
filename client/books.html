@@ -1,0 +1,40 @@
+<!-- booksTable模板定义 -->
+<template name="booksTable">
+    <div style="padding: 5px;">
+        <h1>Books Management</h1>
+        <!-- 新增表单 -->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="form-a1">A1</label>
+                        <input type="text" class="form-control" id="form-a1" placeholder="请输入A1的值"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="form-a2">A2</label>
+                        <input type="text" class="form-control" id="form-a2" placeholder="请输入A2的值"/>
+                    </div>
+                    <button class="btn btn-primary" id="form-add-action">新增</button>
+                </form>
+            </div>
+        </div>
+        <!-- 列表控件 -->
+        {{> tabular table=BooksTabular class="table table-striped table-bordered table-condensed" id="BooksTabularTable"}}
+    </div>
+</template>
+<!-- A1列的单元格模板 -->
+<template name="bookA1Cell">
+    {{#if isMatch}}
+        <span style="color: red">{{value}}</span>
+    {{else}}
+        {{value}}
+    {{/if}}
+</template>
+<!-- A2列的单元格模板 -->
+<template name="bookA2Cell">
+    {{#if isMatch}}
+        <span style="color: red">{{value}}</span>
+    {{else}}
+        {{value}}
+    {{/if}}
+</template>
